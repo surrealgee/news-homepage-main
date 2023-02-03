@@ -53,11 +53,21 @@
 
       <main>
         <article>
-          <img
-            src="assets/images/image-web-3-mobile.jpg"
-            alt=""
-            class="article-img"
-          />
+          <picture>
+            <source
+              media="(min-width: 300px )"
+              srcset="assets/images/image-web-3-mobile.jpg"
+            />
+            <source
+              media="(min-width: 768px)"
+              srcset="assets/images/image-web-3-desktop.jpg"
+            />
+            <img
+              src="assets/images/image-web-3-desktop.jpg"
+              alt=""
+              class="article-img"
+            />
+          </picture>
           <h1 class="article-title">The Bright Future of Web 3.0?</h1>
           <p class="article-body">
             We dive into the next evolution of the web that claims to put the
