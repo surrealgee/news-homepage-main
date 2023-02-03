@@ -105,6 +105,7 @@ nav {
 nav ul {
   margin-top: 5em;
   list-style: none;
+  padding: 0;
 }
 
 nav li {
