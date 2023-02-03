@@ -11,6 +11,12 @@
   --veryDarkBlue: hsl(240, 100%, 5%);
 }
 
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -19,6 +25,7 @@ body {
   height: 100vh;
   position: relative;
   color: var(--veryDarkBlue);
+  /* border: 1px dashed red; */
 }
 
 img {
@@ -30,7 +37,6 @@ img {
 h1 {
   font-size: 2.5rem;
   font-weight: 800;
-  line-height: 0.9;
 }
 
 h2 {
@@ -40,6 +46,10 @@ h2 {
 p {
   line-height: 1.5;
   font-size: 0.95;
+}
+
+a {
+  text-decoration: none;
 }
 
 /* Layout */
@@ -69,9 +79,9 @@ header {
   cursor: pointer;
 }
 
-.nav {
-  display: none;
-  position: absolute;
+nav {
+  visibility: hidden;
+  position: fixed;
   background-color: white;
   height: 100vh;
   width: 70%;
@@ -79,17 +89,28 @@ header {
   right: 0;
   padding: 1.5em;
   background: var(--offWhite);
+  transform: translateX(60%);
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
 }
 
-.nav ul {
+.open-nav {
+  visibility: unset;
+  z-index: 1;
+  box-shadow: -260px 0px 0px rgba(0, 0, 0, 0.4);
+  transform: translateX(0);
+  opacity: 1;
+}
+
+nav ul {
   margin-top: 5em;
 }
 
-.nav li {
+nav li {
   margin: 1.5em 0;
 }
 
-.nav a {
+nav a {
   color: var(--veryDarkBlue);
   font-weight: 400;
   cursor: pointer;
@@ -164,6 +185,10 @@ aside {
   grid-template-columns: 120px 1fr;
   gap: 0 1em;
   margin: 1.5em 0;
+}
+
+.post:last-child {
+  padding-bottom: 3em;
 }
 
 .post img {
